@@ -9,7 +9,7 @@ from NashvilleHousing
 Alter table [dbo].[NashvilleHousing]
 Alter column saleDate date
 
---Populate Property Adress data
+--Populate Property Address data
 
 select a.UniqueID, a.ParcelID,a.PropertyAddress, b.UniqueID, b.ParcelID, b.PropertyAddress, ISNULL(a.PropertyAddress, b.PropertyAddress)
 from NashvilleHousing a join NashvilleHousing b
@@ -24,7 +24,7 @@ on a.ParcelID = b.ParcelID
 and a.UniqueID <> b.UniqueID
 where a.PropertyAddress is null
 
---Breaking out Adress into Individual columns (Adress, City, State)
+--Breaking out Address into Individual columns (Address, City, State)
 
 --Property Address:
 
